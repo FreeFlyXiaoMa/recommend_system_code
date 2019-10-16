@@ -3,7 +3,7 @@
 #@Author  :XiaoMa
 
 import numpy as np
-from module.news.model_eda.LFM.read_ import get_train_data
+from LFM.read_ import get_train_data
 
 
 def lfm_train(train_data,F,alpha,beta,step):
