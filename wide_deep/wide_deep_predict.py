@@ -2,9 +2,9 @@ import tensorflow as tf
 import os
 import numpy as np
 
-exported_path = '/tmp/census_exported/1520271391'
-predictionoutputfile = 'census_output.csv'
-predictioninputfile = 'census_input.csv'
+exported_path = './tmp/1571227888'
+predictionoutputfile = 'D://recommend_system_code/data/wide_deep_pred.csv'
+predictioninputfile = 'D://recommend_system_code/data/census_input.csv'
 
 
 def main():

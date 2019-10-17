@@ -39,7 +39,7 @@ EVAL_URL = '%s/%s' % (DATA_URL, EVAL_FILE)
 parser = argparse.ArgumentParser()
 
 parser.add_argument(
-    '--data_dir', type=str, default='/tmp/census_data',
+    '--data_dir', type=str, default='',
     help='Directory to download census data')
 
 
