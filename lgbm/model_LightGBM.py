@@ -147,18 +147,39 @@ val.drop('income_bracket',axis=1,inplace=True)
 # =====================================================================================================
 # 模型训练
 # =====================================================================================================
+import lightgbm as lgb
+
 y_train=train['label'].values
 X_train=train.drop('label',axis=1)
 
-print(test.head())
+y_val=val['label'].values
+X_val=val.drop('label',axis=1)
 
+#构造数据集
+lgb_train=lgb.Dataset(X_train,y_train)
+lgb_val=lgb.Dataset(X_val,y_val,reference=lgb_train)
 
+params={
+        'boosting':'gbdt',  #boosting框架
+        'objective':'binary',   #两类分类任务
+        'metric':'auc', #评价指标
+        'learning_rate':0.2,    #学习率
+        'num_leaves':128,
+        'max_depth':10, #树的最大深度
+        'num_rounds':200,
+        'begging_freq':1,
+        'begging_seed':1,
+        'max_bin':256,
+        'n_jobs':-1
+}
 
+model_1=lgb.train(params=params,
+                train_set=lgb_train,
+                valid_sets=lgb_val,
+                early_stopping_rounds=5)
 
+model=lgb.train(params=params,train_set=lgb_train,valid_sets=lgb_val,early_stopping_rounds=5)
 
-
-
-
-
+label_pred=model.predict(test,num_iteration=model.best_iteration)
 
 
