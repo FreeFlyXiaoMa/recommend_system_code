@@ -31,9 +31,9 @@ from six.moves import urllib
 import tensorflow as tf
 
 DATA_URL = 'https://archive.ics.uci.edu/ml/machine-learning-databases/adult'
-TRAINING_FILE = 'adult.data'
+TRAINING_FILE = 'train.csv'
 TRAINING_URL = '%s/%s' % (DATA_URL, TRAINING_FILE)
-EVAL_FILE = 'adult.test'
+EVAL_FILE = 'test.csv'
 EVAL_URL = '%s/%s' % (DATA_URL, EVAL_FILE)
 
 parser = argparse.ArgumentParser()

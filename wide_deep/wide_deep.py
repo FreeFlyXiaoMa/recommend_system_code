@@ -39,11 +39,11 @@ parser.add_argument(
     '--batch_size', type=int, default=128, help='Number of examples per batch.')
 
 parser.add_argument(
-    '--train_data', type=str, default='D://recommend_system_code/data/adult.data',
+    '--train_data', type=str, default='D://recommend_system_code/data/train.csv',
     help='Path to the training data.')
 
 parser.add_argument(
-    '--test_data', type=str, default='D://recommend_system_code/data/adult.test',
+    '--test_data', type=str, default='D://recommend_system_code/data/test.csv',
     help='Path to the test data.')
 
 _NUM_EXAMPLES = {

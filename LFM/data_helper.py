@@ -10,7 +10,7 @@ import argparse
 import pymysql
 from sqlalchemy import create_engine
 
-from module.news.model_eda.LFM.utils import flatten_to_target
+from LFM.utils import flatten_to_target
 
 pymysql.install_as_MySQLdb()
 
